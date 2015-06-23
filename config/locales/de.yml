@@ -1,0 +1,136 @@
+de:
+  activerecord:
+
+    # MODELS
+    models:
+      tag:
+        one: Tag
+        other: Tags
+
+      place:
+        one: Platz
+        other: Plätze
+
+      translation:
+        one: Übersetzung
+        other: Übersetzungen
+
+      name_translation:
+        one: Name
+        other: Namen
+
+      hardware:
+        one: Hardware
+        other: Hardware
+
+      customer:
+        one: Benutzer
+        other: Benutzer
+
+      text_record:
+        one: Text Eintrag
+        other: Text Einträge
+
+    # ATTRIBUTES
+    attributes:
+      tag:
+        description: Beschreibung
+        active: Aktiv
+        parent_id: Eltern Tag
+        parent: Eltern Tag
+        gender: Geschlecht
+        place: Platz
+        created_at: Erstellt am
+
+      place:
+        description: Beschreibung
+        created_at: Erstellt am
+
+      text_record:
+        gender: Geschlecht
+        image_uri: Bild URL
+        link_uri: Link URL
+
+      translation:
+        lang_code: Ländercode
+
+      name_translation:
+        lang_code: Ländercode
+
+      hardware:
+        hardware_type: Hardware Typ
+        location: Standort
+
+      customer:
+        first_name: Vorname
+        last_name: Nachname
+        company: Firma
+        cms_lang: Sprache
+
+  # TIME FORMAT
+  time:
+    formats:
+      short: ! '%d. %b %H:%M'
+      
+  # OVERVIEW VIEWS
+  overview_top10_scanned_tags: Top 10 gescannte Tags
+
+  # TAG VIEWS
+  tag_details: Details
+  tag_status_active: Aktiv
+  tag_status_inactive: Inaktiv
+  tag_gender_male: Männlich
+  tag_gender_female: Weiblich
+  tag_select_partent_tag: Wähle Eltern Tag
+  tag_select_place: Wähle Platz
+  tag_is_active: Tag is aktiv
+  tag_active_time: Aktive Zeit (UTC)
+  tag_active_time_enabled: Aktive Zeit ist eingeschalten
+  tag_active_time_start: Wähle Start Zeit (08:00:00)
+  tag_active_time_stop: Wähle Stop Zeit (17:00:00)
+  tag_active_date: Aktives Datum
+  tag_active_date_enabled: Aktives Datum ist eingeschalten
+  tag_active_date_daterange: Wähle Datumszeitraum (01.01.2015 - 02.01.2015)
+
+  # PLACE VIEWS
+  place_details: Details
+
+  # HARDWARE VIEWS
+  hardware_select_type: Wähle Hardware Typ
+  hardware_validate_exists: Hardware existiert bereits
+  hardware_validate_identifier_invalid: Falscher Identifier
+  hardware_validate_major_required: Major ID benötigt
+  hardware_validate_minor_required: Minor ID benötigt
+
+  # TRANSLATION VIEWS
+  translation_select_language: Wähle Sprache
+
+  # NAME TRANSLATION VIEWS
+  name_translation_select_language: Wähle Sprache
+
+  # CUSTOMER VIEWS
+  customer_select_language: Wähle Sprache
+
+  # DEVISE
+  devise_signup: Registrieren
+  devise_signin: Login
+  devise_signout: Logout
+  devise_email: E-mail
+  devise_password: Passwort
+  devise_remember_me: Eingeloggt bleiben
+  devise_forgot_password: Passwort vergessen
+  devise_did_not_receive_confirmation_instruction: Zustimmungsinformationen nicht erhalten
+  devise_did_not_receive_unlock_instruction: Entsperrinformationen nicht erhalten
+  devise_resend_unlock_instructions: Entsperrinformationen senden
+  devise_resend_password: Passwort Informationen senden
+  devise_change_password: Passwort ändern
+  devise_change_my_password: Mein Passwort ändern
+  devise_resend_confirmation_instructions: Konformations Informationen senden
+
+  # MAINBAR
+  mainbar_profile: Benutzerprofil
+  mainbar_settings: Einstellungen
+
+  # FOOTER
+  footer_contact: Kontakt
+  footer_terms: Nutzungsbedingungen & Datenschutz

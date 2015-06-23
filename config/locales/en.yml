@@ -1,0 +1,113 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+
+    # MODELS
+    models:
+      tag:
+        one: Tag
+        other: Tags
+
+      translation:
+        one: Translation
+        other: Translations
+
+      name_translation:
+        one: Name
+        other: Names
+
+      place:
+        one: Place
+        other: Places
+
+      hardware:
+        one: Hardware
+        other: Hardware
+
+    # ATTRIBUTES
+    attributes:
+      customer:
+        cms_lang: Language
+
+  # OVERVIEW VIEWS
+  overview_top10_scanned_tags: Top 10 Scanned Tags
+
+  # TAG VIEWS
+  tag_details: Details
+  tag_status_active: Active
+  tag_status_inactive: Inactive
+  tag_gender_male: Male
+  tag_gender_female: Female
+  tag_select_partent_tag: Select Parent Tag
+  tag_select_place: Select Place
+  tag_is_active: Tag is active
+  tag_active_time: Active Time (UTC)
+  tag_active_time_enabled: Active Time is enabled
+  tag_active_time_start: Select Start Time (08:00:00)
+  tag_active_time_stop: Select Stop Time (17:00:00)
+  tag_active_date: Active Date
+  tag_active_date_enabled: Active Date is enabled
+  tag_active_date_daterange: Select a Daterange (01.01.2015 - 02.01.2015)
+
+  # PLACE VIEWS
+  place_details: Details
+
+  # HARDWARE VIEWS
+  hardware_select_type: Select Hardware Type
+  hardware_validate_exists: Hardware already exists
+  hardware_validate_identifier_invalid: Invalid Identifier
+  hardware_validate_major_required: Major ID required
+  hardware_validate_minor_required: Minor ID required
+
+  # TRANSLATION VIEWS
+  translation_select_language: Select language
+
+  # NAME TRANSLATION VIEWS
+  name_translation_select_language: Select language
+
+  # CUSTOMER VIEWS
+  customer_select_language: Select language
+
+  # DEVISE
+  devise_signup: Sign up
+  devise_signin: Sign in
+  devise_signout: Sign out
+  devise_email: E-mail
+  devise_password: Password
+  devise_remember_me: Remember me
+  devise_forgot_password: Forgot your password?
+  devise_did_not_receive_confirmation_instruction: Didn't receive confirmation instructions?
+  devise_did_not_receive_unlock_instruction: Didn't receive unlock instructions?
+  devise_resend_unlock_instructions: Resend unlock instructions
+  devise_resend_password: Send me reset password reset instructions
+  devise_change_password: Change your password
+  devise_change_my_password: Change your password
+  devise_resend_confirmation_instructions: Resend confirmation instructions
+
+  # MAINBAR
+  mainbar_profile: Profile
+  mainbar_settings: Settings
+
+  # FOOTER
+  footer_contact: Contact
+  footer_terms: Terms of Use & Privacy Policy

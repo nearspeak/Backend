@@ -1,0 +1,2151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Tag
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Tag.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">Tag</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Tag
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Tag</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/tag.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Tag model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_with_data-class_method" title="create_with_data (class method)">+ (Object) <strong>create_with_data</strong>(text, lang_code, purchase_id, gender, hardware_id, hardware_type, ble_major, ble_minor, name, parent_id, latitude, longitude, customer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new tag with the given data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#my_top10_chart_data-class_method" title="my_top10_chart_data (class method)">+ (Object) <strong>my_top10_chart_data</strong>(current_customer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the top 10 scanned tags.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_by_ble_hardware_id-class_method" title="show_by_ble_hardware_id (class method)">+ (Object) <strong>show_by_ble_hardware_id</strong>(hardware_id, hardware_type, major, minor) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show all tags by bluetooth le hardware id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_by_hardware_id-class_method" title="show_by_hardware_id (class method)">+ (Object) <strong>show_by_hardware_id</strong>(hardware_id, hardware_type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show all tags by hardware id and hardware type.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active_date_to_string-instance_method" title="#active_date_to_string (instance method)">- (Object) <strong>active_date_to_string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the active date as a string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active_time_to_string-instance_method" title="#active_time_to_string (instance method)">- (Object) <strong>active_time_to_string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the active time as a string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_hardware_id_to_tag-instance_method" title="#add_hardware_id_to_tag (instance method)">- (Object) <strong>add_hardware_id_to_tag</strong>(hardware_id, hardware_type, ble_major, ble_minor, latitude, longitude) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a hardware to a tag.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_location_to_hardware-instance_method" title="#add_location_to_hardware (instance method)">- (Object) <strong>add_location_to_hardware</strong>(hardware_id, latitude, longitude) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a location to a hardware.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_date_active-instance_method" title="#current_date_active (instance method)">- (Object) <strong>current_date_active</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks if the current tag is active.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_time_active-instance_method" title="#current_time_active (instance method)">- (Object) <strong>current_time_active</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the active_time is currently active, else it returns false.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#currently_active-instance_method" title="#currently_active (instance method)">- (Object) <strong>currently_active</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the tag is currently active, else it returns false.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#display_name-instance_method" title="#display_name (instance method)">- (Object) <strong>display_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show a display name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_name_translation-instance_method" title="#get_name_translation (instance method)">- (Object) <strong>get_name_translation</strong>(lang_code) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the translated name, or the original text if the language is the
+current.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_original_text-instance_method" title="#set_original_text (instance method)">- (Object) <strong>set_original_text</strong>(text, lang_code) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the original text for the tag.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create_with_data-class_method">
+  
+    + (<tt>Object</tt>) <strong>create_with_data</strong>(text, lang_code, purchase_id, gender, hardware_id, hardware_type, ble_major, ble_minor, name, parent_id, latitude, longitude, customer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new tag with the given data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The translation text.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>lang_code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The language code.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>purchase_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The purchase id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>gender</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The gender for the translation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hardware_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hardware_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware type.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ble_major</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The bluetooth le major id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ble_minor</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The bluetooth le minor id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the tag.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>parent_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The parent if of the tag.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>latitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The latitude of the hardware.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>longitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The longitude of the hardware.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>customer</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The customer of the tag.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_with_data'>create_with_data</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='comma'>,</span> <span class='id identifier rubyid_purchase_id'>purchase_id</span><span class='comma'>,</span> <span class='id identifier rubyid_gender'>gender</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_parent_id'>parent_id</span><span class='comma'>,</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='comma'>,</span> <span class='id identifier rubyid_customer'>customer</span><span class='rparen'>)</span>
+  <span class='comment'>#logger.info &#39;DBG: create new tag with text: &#39; + text + &#39; and lang: &#39; + lang_code + &#39; and purchase id: &#39; + purchase_id + &#39;and hardware id: &#39; + hardware_id
+</span>
+  <span class='comment'># check if the language code exists
+</span>  <span class='kw'>unless</span> <span class='const'>TranslationsHelper</span><span class='period'>.</span><span class='id identifier rubyid_is_valid_language'>is_valid_language</span> <span class='id identifier rubyid_lang_code'>lang_code</span>
+    <span class='kw'>return</span> <span class='int'>400</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Translation language is not supported</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>TranslationError</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># check if enough purchases are available for the given id
+</span>  <span class='id identifier rubyid_purchase_count'>purchase_count</span> <span class='op'>=</span> <span class='const'>Purchase</span><span class='period'>.</span><span class='id identifier rubyid_check_purchases'>check_purchases</span><span class='lparen'>(</span><span class='id identifier rubyid_purchase_id'>purchase_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_hardware'>hardware</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='const'>HardwaresHelper</span><span class='period'>.</span><span class='id identifier rubyid_validate_hardware_type'>validate_hardware_type</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+
+      <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='comment'>#remove hardware from other tags first
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span> <span class='op'>==</span> <span class='const'>HardwaresHelper</span><span class='op'>::</span><span class='const'>TYPE_BLE</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>identifier = ? AND hardware_type = ? AND major = ? AND minor = ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>identifier = ? AND hardware_type = ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>unless</span> <span class='id identifier rubyid_old_hardware'>old_hardware</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_old_hardware'>old_hardware</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span>
+      <span class='kw'>end</span>
+
+      <span class='id identifier rubyid_hardware'>hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>identifier:</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='label'>hardware_type:</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+
+      <span class='kw'>unless</span> <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='comment'># add major and minor id on bluetooth beacons
+</span>        <span class='kw'>if</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span> <span class='op'>==</span> <span class='const'>HardwaresHelper</span><span class='op'>::</span><span class='const'>TYPE_BLE</span>
+          <span class='kw'>unless</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_major'>major</span> <span class='op'>=</span> <span class='id identifier rubyid_ble_major'>ble_major</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_minor'>minor</span> <span class='op'>=</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+
+        <span class='comment'># add hardware location
+</span>        <span class='kw'>unless</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='const'>HardwareLocation</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>latitude:</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='label'>longitude:</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='rparen'>)</span>
+
+          <span class='kw'>unless</span> <span class='id identifier rubyid_location'>location</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_hardware_locations'>hardware_locations</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_location'>location</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># check if gender value is f or m. If not set default: m
+</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_gender'>gender</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>m</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>or</span> <span class='id identifier rubyid_gender'>gender</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>f</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_gender'>gender</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>m</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_purchase_count'>purchase_count</span> <span class='op'>&lt;</span> <span class='const'>MAX_TAGS_PER_PURCHASE_ID</span>
+
+    <span class='id identifier rubyid_tag'>tag</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+    <span class='label'>customer:</span> <span class='id identifier rubyid_customer'>customer</span><span class='comma'>,</span>
+    <span class='label'>text_record_attributes:</span>
+    <span class='lbrace'>{</span>
+      <span class='label'>original_text_attributes:</span> <span class='lbrace'>{</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:lang_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lang_code'>lang_code</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='label'>gender:</span> <span class='id identifier rubyid_gender'>gender</span><span class='comma'>,</span>
+      <span class='label'>purchase_attributes:</span> <span class='lbrace'>{</span> <span class='symbol'>:purchase_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_purchase_id'>purchase_id</span> <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+    <span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>return</span> <span class='int'>400</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Error while creating now tag</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreationError</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='comment'># if there is already some hardware info save it to the current tag
+</span>      <span class='kw'>unless</span> <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_hardwares'>hardwares</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_hardware'>hardware</span>
+        <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># if there is a name add it as original name to the current tag
+</span>      <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_original_text'>original_text</span> <span class='op'>=</span> <span class='const'>NameTranslation</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:lang_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_original_name'>original_name</span> <span class='op'>=</span> <span class='id identifier rubyid_original_text'>original_text</span>
+        <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>if</span> <span class='id identifier rubyid_parent_id'>parent_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_parent_id'>parent_id</span> <span class='op'>=</span> <span class='id identifier rubyid_parent_id'>parent_id</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>return</span> <span class='int'>200</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='int'>400</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>You are out of purchases</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>OutOfPurchases</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="my_top10_chart_data-class_method">
+  
+    + (<tt>Object</tt>) <strong>my_top10_chart_data</strong>(current_customer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the top 10 scanned tags.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>current_customer</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The current customer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+424
+425
+426</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 424</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_my_top10_chart_data'>my_top10_chart_data</span><span class='lparen'>(</span><span class='id identifier rubyid_current_customer'>current_customer</span><span class='rparen'>)</span>
+  <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_my_top_10_scanned'>my_top_10_scanned</span><span class='lparen'>(</span><span class='id identifier rubyid_current_customer'>current_customer</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tag'>tag</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_display_name'>display_name</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_scan_count'>scan_count</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_by_ble_hardware_id-class_method">
+  
+    + (<tt>Object</tt>) <strong>show_by_ble_hardware_id</strong>(hardware_id, hardware_type, major, minor) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show all tags by bluetooth le hardware id.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hardware_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hardware_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware type.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>major</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The major id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>minor</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The minor id.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+255
+256
+257
+258
+259
+260
+261
+262
+263</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 255</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_show_by_ble_hardware_id'>show_by_ble_hardware_id</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span> <span class='id identifier rubyid_major'>major</span><span class='comma'>,</span> <span class='id identifier rubyid_minor'>minor</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_major'>major</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_minor'>minor</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:hardwares</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.identifier</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.hardware_type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.major</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_major'>major</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.minor</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span>
+    <span class='label'>active:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_by_hardware_id-class_method">
+  
+    + (<tt>Object</tt>) <strong>show_by_hardware_id</strong>(hardware_id, hardware_type) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show all tags by hardware id and hardware type.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hardware_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hardware_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware type.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+240
+241
+242
+243
+244
+245
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 240</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_show_by_hardware_id'>show_by_hardware_id</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:hardwares</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.identifier</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.hardware_type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span>
+    <span class='label'>active:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="active_date_to_string-instance_method">
+  
+    - (<tt>Object</tt>) <strong>active_date_to_string</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the active date as a string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+410
+411
+412
+413
+414
+415
+416
+417
+418</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 410</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_active_date_to_string'>active_date_to_string</span>
+  <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_date'>active_start_date</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_date'>active_stop_date</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_dateFormat'>dateFormat</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%d.%m.%Y</span><span class='tstring_end'>&quot;</span></span>
+    
+    <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_date'>active_start_date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_dateFormat'>dateFormat</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> - </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_date'>active_stop_date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_dateFormat'>dateFormat</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="active_time_to_string-instance_method">
+  
+    - (<tt>Object</tt>) <strong>active_time_to_string</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the active time as a string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+399
+400
+401
+402
+403
+404
+405
+406</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 399</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_active_time_to_string'>active_time_to_string</span>
+  <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_time'>active_start_time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_time'>active_stop_time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_timeFormat'>timeFormat</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H:%M</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_time'>active_start_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_timeFormat'>timeFormat</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> - </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_time'>active_stop_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_timeFormat'>timeFormat</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_hardware_id_to_tag-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_hardware_id_to_tag</strong>(hardware_id, hardware_type, ble_major, ble_minor, latitude, longitude) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a hardware to a tag.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hardware_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hardware_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware type.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ble_major</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The bluetooth le major id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ble_minor</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The bluetooth le minor id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>latitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The latitude of the hardware location.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>longitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The longitude of the hardware location.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 174</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_hardware_id_to_tag'>add_hardware_id_to_tag</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='comma'>,</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>return</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Error hardware id is missing</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UpdatedError</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='kw'>if</span> <span class='const'>HardwaresHelper</span><span class='period'>.</span><span class='id identifier rubyid_validate_hardware_type'>validate_hardware_type</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+
+      <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='comment'>#remove hardware from other tags first
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span> <span class='op'>==</span> <span class='const'>HardwaresHelper</span><span class='op'>::</span><span class='const'>TYPE_BLE</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>identifier = ? AND hardware_type = ? AND major = ? AND minor = ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='comma'>,</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_old_hardware'>old_hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>identifier = ? AND hardware_type = ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>unless</span> <span class='id identifier rubyid_old_hardware'>old_hardware</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_old_hardware'>old_hardware</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span>
+      <span class='kw'>end</span>
+
+      <span class='id identifier rubyid_hardware'>hardware</span> <span class='op'>=</span> <span class='const'>Hardware</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>identifier:</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='label'>hardware_type:</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span><span class='rparen'>)</span>
+
+      <span class='kw'>unless</span> <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+        <span class='comment'># add major and minor id on bluetooth beacons
+</span>        <span class='kw'>if</span> <span class='id identifier rubyid_hardware_type'>hardware_type</span> <span class='op'>==</span> <span class='const'>HardwaresHelper</span><span class='op'>::</span><span class='const'>TYPE_BLE</span>
+          <span class='kw'>unless</span> <span class='id identifier rubyid_ble_major'>ble_major</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_major'>major</span> <span class='op'>=</span> <span class='id identifier rubyid_ble_major'>ble_major</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_minor'>minor</span> <span class='op'>=</span> <span class='id identifier rubyid_ble_minor'>ble_minor</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+
+        <span class='comment'># add hardware location
+</span>        <span class='kw'>unless</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='const'>HardwareLocation</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>latitude:</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='label'>longitude:</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='rparen'>)</span>
+
+          <span class='kw'>unless</span> <span class='id identifier rubyid_location'>location</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_hardware'>hardware</span><span class='period'>.</span><span class='id identifier rubyid_hardware_locations'>hardware_locations</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_location'>location</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_hardwares'>hardwares</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_hardware'>hardware</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+    <span class='kw'>else</span>
+      <span class='kw'>return</span> <span class='int'>400</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Error while adding hardware</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AddingHardwareError</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>return</span> <span class='int'>200</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_location_to_hardware-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_location_to_hardware</strong>(hardware_id, latitude, longitude) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a location to a hardware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hardware_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The hardware id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>latitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The latitude of the hardware.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>longitude</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The longitude of the hardware.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 271</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_location_to_hardware'>add_location_to_hardware</span><span class='lparen'>(</span><span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='comma'>,</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_tag'>tag</span> <span class='op'>=</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:hardwares</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hardwares.identifier</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='const'>HardwareLocation</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>latitude:</span> <span class='id identifier rubyid_latitude'>latitude</span><span class='comma'>,</span> <span class='label'>longitude:</span> <span class='id identifier rubyid_longitude'>longitude</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_hardwares'>hardwares</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_identifier'>identifier</span> <span class='op'>==</span> <span class='id identifier rubyid_hardware_id'>hardware_id</span>
+        <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_hardware_locations'>hardware_locations</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_location'>location</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current_date_active-instance_method">
+  
+    - (<tt>Object</tt>) <strong>current_date_active</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks if the current tag is active.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 380</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_date_active'>current_date_active</span>
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_date'>active_start_date</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_date'>active_stop_date</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># get the current time
+</span>  <span class='id identifier rubyid_current_time'>current_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_date'>active_start_date</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_current_time'>current_time</span> <span class='kw'>and</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_date'>active_stop_date</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_current_time'>current_time</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current_time_active-instance_method">
+  
+    - (<tt>Object</tt>) <strong>current_time_active</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the active_time is currently active, else it returns false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 360</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_time_active'>current_time_active</span>
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_time'>active_start_time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>  <span class='kw'>or</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_time'>active_stop_time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># get the current time
+</span>  <span class='id identifier rubyid_current_time'>current_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span>
+  
+  <span class='comment'># check if current time is in range
+</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_start_time'>active_start_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H%M%S%N</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_current_time'>current_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H%M%S%N</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span> <span class='kw'>and</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_stop_time'>active_stop_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H%M%S%N</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_current_time'>current_time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H%M%S%N</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="currently_active-instance_method">
+  
+    - (<tt>Object</tt>) <strong>currently_active</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the tag is currently active, else it returns false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 335</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_currently_active'>currently_active</span>
+  <span class='comment'># check if tag is active
+</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active'>active</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># check if time based activation is active
+</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_time'>active_time</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_current_time_active'>current_time_active</span>
+      <span class='kw'>return</span> <span class='kw'>false</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># check if date based activation is action
+</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_date'>active_date</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_current_date_active'>current_date_active</span>
+      <span class='kw'>return</span> <span class='kw'>false</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="display_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>display_name</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show a display name.</p>
+<ol><li>
+<p>if available show original text</p>
+</li><li>
+<p>if available show old name</p>
+</li><li>
+<p>show tag id</p>
+</li></ol>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_display_name'>display_name</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_id'>id</span><span class='op'>:</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_name_translation-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_name_translation</strong>(lang_code) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the translated name, or the original text if the language is the
+current.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>lang_code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The language code.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 289</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_name_translation'>get_name_translation</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='comment'>#format language code to a valid bing translate format
+</span>  <span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span> <span class='op'>=</span> <span class='const'>TranslationsHelper</span><span class='period'>.</span><span class='id identifier rubyid_cut_country'>cut_country</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># check if this is a valid language code
+</span>  <span class='kw'>unless</span> <span class='const'>TranslationsHelper</span><span class='period'>.</span><span class='id identifier rubyid_is_valid_language'>is_valid_language</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># check if original text is in the new language
+</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_lang_code_original_cut'>lang_code_original_cut</span> <span class='op'>=</span> <span class='const'>TranslationsHelper</span><span class='period'>.</span><span class='id identifier rubyid_cut_country'>cut_country</span><span class='lparen'>(</span><span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_lang_code'>lang_code</span> <span class='op'>==</span> <span class='id identifier rubyid_lang_code'>lang_code</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_lang_code'>lang_code</span> <span class='op'>==</span> <span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span>
+      <span class='id identifier rubyid_add_name_translation'>add_name_translation</span><span class='lparen'>(</span><span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_lang_code_original_cut'>lang_code_original_cut</span> <span class='op'>==</span> <span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span>
+      <span class='id identifier rubyid_add_name_translation'>add_name_translation</span><span class='lparen'>(</span><span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_original_name'>original_name</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># check if translation is already available, if not translate it via bing
+</span>  <span class='id identifier rubyid_trans'>trans</span> <span class='op'>=</span> <span class='id identifier rubyid_name_translations'>name_translations</span><span class='period'>.</span><span class='id identifier rubyid_find_by_lang_code'>find_by_lang_code</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_trans'>trans</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_trans_cut'>trans_cut</span> <span class='op'>=</span> <span class='id identifier rubyid_name_translations'>name_translations</span><span class='period'>.</span><span class='id identifier rubyid_find_by_lang_code'>find_by_lang_code</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code_cut'>lang_code_cut</span><span class='rparen'>)</span>
+
+    <span class='comment'># check if there is a translation only with the language code, without country code
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_trans_cut'>trans_cut</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_translate_name_into_lang_code'>translate_name_into_lang_code</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_add_name_translation'>add_name_translation</span><span class='lparen'>(</span><span class='id identifier rubyid_trans_cut'>trans_cut</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_trans_cut'>trans_cut</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_trans'>trans</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_original_text-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_original_text</strong>(text, lang_code) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the original text for the tag.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The original text.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>lang_code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The language code of the original text.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+231
+232
+233</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/tag.rb', line 231</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_original_text'>set_original_text</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_text_record'>text_record</span><span class='period'>.</span><span class='id identifier rubyid_set_original_text'>set_original_text</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Jun 23 15:57:09 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

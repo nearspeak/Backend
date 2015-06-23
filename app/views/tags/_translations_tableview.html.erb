@@ -1,0 +1,56 @@
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-flag"></i>
+      <%= Translation.model_name.human(:count => 2).titleize %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <% unless translations.nil? %>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th><%= Translation.human_attribute_name(:lang_code) %></th>
+            <th><%= Translation.human_attribute_name(:text) %></th>
+            <th><%= t 'helpers.actions', :default => t('helpers.actions') %></th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <% translations.each do |translation| %>
+              <tr>
+                <td><%= translation.lang_code %></td>
+                <td><%= translation.text %></td>
+                <td>
+
+                  <%= link_to(edit_translation_path(translation, :tag_id => tag.id), :class => 'btn btn-default') do %>
+                      <i class="fa fa-pencil"></i>
+                  <% end %>
+
+                  <% if translation.original_text_id.nil? %>
+
+                      <%= link_to(translation_path(translation, :tag_id => tag.id),
+                                  :method => :delete,
+                                  :data => { :confirm => t('helpers.links.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) },
+                                  :class => 'btn btn-danger') do %>
+                          <i class="fa fa-trash-o"></i>
+                      <% end %>
+
+                  <% end %>
+                </td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
+    <% end %>
+
+    <% unless tag.nil? %>
+        <div class="form-actions">
+          <%= link_to t('helpers.titles.new', model: Translation.model_name.human.titleize, :default => t('helpers.titles.new')),
+                      new_translation_path(:mode => 'in_mode', :tag_id => tag.id),
+                      :class => 'btn btn-default' %>
+        </div>
+    <% end %>
+  </div>
+</div>

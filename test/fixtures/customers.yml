@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+customer_one:
+  email: test-user-a@nearspeak.at
+  first_name: Max1
+  last_name: Mustermann
+  encrypted_password: <%= Customer.new.send(:password_digest, 'secret@pwd') %>

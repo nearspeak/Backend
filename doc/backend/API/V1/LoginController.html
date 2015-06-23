@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: API::V1::LoginController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!API/V1/LoginController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (L)</a> &raquo;
+    <span class='title'>API</span> &raquo; <span class='title'>V1</span>
+     &raquo; 
+    <span class="title">LoginController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: API::V1::LoginController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ApplicationController</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ApplicationController</li>
+          
+            <li class="next">API::V1::LoginController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/api/v1/login_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The API login controller.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_auth_token-instance_method" title="#get_auth_token (instance method)">- (Object) <strong>get_auth_token</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the authenticaton token for the customer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_in_with_facebook-instance_method" title="#sign_in_with_facebook (instance method)">- (Object) <strong>sign_in_with_facebook</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sign the customer in via facebook.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_out-instance_method" title="#sign_out (instance method)">- (Object) <strong>sign_out</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sign the customer out from the system and invalidate the authentication
+token.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_auth_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_auth_token</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the authenticaton token for the customer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/login_controller.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_auth_token'>get_auth_token</span>
+  <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:email</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The request must contain a valid email.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_password'>password</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The request must contain a valid password.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_customer'>customer</span> <span class='op'>=</span> <span class='const'>Customer</span><span class='period'>.</span><span class='id identifier rubyid_find_by_email'>find_by_email</span><span class='lparen'>(</span><span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>User not found.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_valid_password?'>valid_password?</span><span class='lparen'>(</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_ensure_authentication_token'>ensure_authentication_token</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>200</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:auth_token</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_get_devise_auth_token'>get_devise_auth_token</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Invalid email or password.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sign_in_with_facebook-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sign_in_with_facebook</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sign the customer in via facebook</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/login_controller.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sign_in_with_facebook'>sign_in_with_facebook</span>
+  <span class='id identifier rubyid_auth_token'>auth_token</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:auth_token</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_auth_token'>auth_token</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The request must contain a valid authentication token.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_graph'>graph</span> <span class='op'>=</span> <span class='const'>Koala</span><span class='op'>::</span><span class='const'>Facebook</span><span class='op'>::</span><span class='const'>API</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_token'>auth_token</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_facebook_data'>facebook_data</span> <span class='op'>=</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_get_object'>get_object</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>me</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_facebook_data'>facebook_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Facebook data is empty.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>FacebookError</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_customer'>customer</span> <span class='op'>=</span> <span class='const'>Customer</span><span class='period'>.</span><span class='id identifier rubyid_from_facebook'>from_facebook</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_token'>auth_token</span><span class='comma'>,</span> <span class='id identifier rubyid_facebook_data'>facebook_data</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Facebook sign in error.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignInError</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_persisted?'>persisted?</span>
+
+    <span class='comment'># create default device token
+</span>    <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_ensure_authentication_token'>ensure_authentication_token</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>200</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:auth_token</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_get_devise_auth_token'>get_devise_auth_token</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Facebook sign in error.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignInError</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sign_out-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sign_out</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sign the customer out from the system and invalidate the authentication
+token.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/login_controller.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sign_out'>sign_out</span>
+  <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:email</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_auth_token'>auth_token</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:auth_token</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The request must contain a valid email.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_customer'>customer</span> <span class='op'>=</span> <span class='const'>Customer</span><span class='period'>.</span><span class='id identifier rubyid_find_by_email'>find_by_email</span><span class='lparen'>(</span><span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_auth_token'>auth_token</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The request must contain a valid authentication token.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InvalidRequest</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_customer'>customer</span><span class='period'>.</span><span class='id identifier rubyid_remove_devise_auth_token'>remove_devise_auth_token</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_token'>auth_token</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>200</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Logout was successful.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>OK</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='int'>400</span><span class='comma'>,</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Logout went wrong.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LogoutError</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Jun 23 15:57:09 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

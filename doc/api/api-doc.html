@@ -1,0 +1,496 @@
+<html>
+<head><title>Nearspeak Documentation</title></head>
+<body>
+<p><link href="markdown.css" rel="stylesheet"></link></p>
+
+<h1>Nearspeak API Documentation (Version: 0.1.0)</h1>
+
+<ul>
+<li>JSON Keys marked with "*" are mandatory, if there are default values it's noted with [default: ]</li>
+</ul>
+
+<h2>Login</h2>
+
+<h3>POST /api/v1/login/getAuthToken</h3>
+
+<ul>
+<li>Returns an authentication token, which is required for other api methods.</li>
+</ul>
+
+<h4>Example Request</h4>
+
+<pre><code>{
+  *"email": "user@example.com",
+  *"password": "supersecretpassword",
+}
+</code></pre>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XPOST -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/login/getAuthToken -d '{ "email": "demo@example.com", "password": "secret" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "auth_token":"urjufyi4MFDXyitZM9Tx"
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {
+      "error": {
+          "message": "User not found.",
+          "code": "InvalidRequest"
+      }
+  }
+</code></pre>
+
+<h3>POST /api/v1/login/signInWithFacebook</h3>
+
+<ul>
+<li>Sign in via facebook authentication token.</li>
+</ul>
+
+<h4>Example Request</h4>
+
+<pre><code>{
+  *"auth_token" : "zeHDoz4ixg9BNi5mvZmB"
+}
+</code></pre>
+
+<h3>POST /api/v1/login/signOut</h3>
+
+<ul>
+<li>Sign out the user.</li>
+</ul>
+
+<h4>Example Request</h4>
+
+<pre><code>{
+  *"email": "user@example.com",
+  *"auth_token": "zeHDoz4ixg9BNi5mvZmB"
+}
+</code></pre>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XPOST -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/login/signOut -d '{ "email": "user@example.com", "auth_token": "urauMyiM2F3XydtKM9Td" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "message":"Logout was successful.",
+   "code":"OK"
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"Logout went wrong.",
+        "code":"LogoutError"
+     }
+  }
+</code></pre>
+
+<h2>Tags</h2>
+
+<h3>POST /api/v1/tags/create</h3>
+
+<ul>
+<li>Creates a new tag. If a valid <em>auth_token</em> is given, the tag is connected to the customer.</li>
+</ul>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><strong>lang</strong>          <code>required</code>  The language code if the new text. <strong>Example Values:</strong> <code>de</code></li>
+<li><strong>purchase_id</strong>   <code>required</code>  The purchase ID from the Windows Phone Store. <strong>Example Values:</strong> <code>4ea93515-5a84-4add-bf81-293b306b968f</code></li>
+<li><strong>text</strong>          <code>required</code>  The new text. <strong>Example Values:</strong> <code>What does the fox say.</code></li>
+<li><strong>auth_token</strong>    <code>optional</code>  The authentication token. <strong>Example Values:</strong> <code>zeHDoz4ixg9BNi5mvZmB</code></li>
+<li><strong>name</strong>          <code>optional</code>  The name for the tag. <strong>Example Values:</strong> <code>Entrance door</code></li>
+<li><strong>gender</strong>        <code>optional</code>  Choose m for male or f for female. <strong>Example Values:</strong> <code>m</code></li>
+<li><strong>hardware_id</strong>   <code>optional</code>  The hardware identifier. <strong>Example Values:</strong> <code>0433288AA62781</code></li>
+<li><strong>hardware_type</strong> <code>optional</code>  The hardware type. <strong>Valid Values:</strong> <code>nfc, ble-beacon, qr</code></li>
+<li><strong>major</strong>         <code>optional</code>  The bluetooth beacon major id. <strong>Valid Values:</strong> <code>1234</code></li>
+<li><strong>minor</strong>         <code>optional</code>  The bluetooth beacon minor id. <strong>Valid Values:</strong> <code>5678</code></li>
+<li><strong>parent_id</strong>     <code>optional</code>  The id of the parent tag. <strong>Example Values:</strong> <code>139</code></li>
+<li><strong>lat</strong>           <code>optional</code>  The latitude of the hardware. <strong>Example Values:</strong> <code>47.42307</code></li>
+<li><strong>lon</strong>           <code>optional</code>  The longitude of the hardware. <strong>Example Values:</strong> <code>15.26703</code></li>
+</ul>
+
+<h4>Example Request</h4>
+
+<pre><code>{
+  "auth_token": "zeHDoz4ixg9BNi5mvZmB",
+  *"lang": "de",
+  *"purchase_id": "4ea93515-5a84-4add-bf81-293b306b968f",
+  *"text": "What does the fox say"
+}
+</code></pre>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XPOST -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/create -d '{ "auth_token": "urjuMyiMMFEXyitKMaFx", "purchase_id": "4ea932415-5e84-4aff-bf81-293b306b9463f", "text": "Whats up", "lang": "de" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "tags":[  
+      {  
+         "id":175,
+         "tag_identifier":"c29483d3e4de",
+         "gender":"m",
+         "translation":{  
+            "text":"Whats up",
+            "lang":"de"
+         }
+      }
+   ]
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"Request values are missing",
+        "values":[  
+           "lang"
+        ],
+        "code":"InvalidRequest"
+     }
+  }
+</code></pre>
+
+<h3>POST /api/v1/tags/addHardwareIdToTag</h3>
+
+<ul>
+<li>Add a hardware identifier to a nearspeak tag.</li>
+</ul>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><strong>id</strong>            <code>required</code>  The Nearspeak ID. <strong>Example Values:</strong> <code>58f46cfe90d5</code></li>
+<li><strong>hardware_id</strong>   <code>required</code>  The hardware identifier. <strong>Example Values:</strong> <code>0433288AA62781</code></li>
+<li><strong>hardware_type</strong> <code>required</code>  The hardware type. <strong>Valid Values:</strong> <code>nfc, ble-beacon, qr</code></li>
+<li><strong>auth_token</strong>    <code>optional</code>  The authentication token. <strong>Example Values:</strong> <code>zeHDoz4ixg9BNi5mvZmB</code></li>
+<li><strong>major</strong>         <code>optional</code>  The bluetooth beacon major id (Required if type id ble_beacon). <strong>Example Values:</strong> <code>1234</code></li>
+<li><strong>minor</strong>         <code>optional</code>  The bluetooth beacon minor id (Required if type id ble_beacon). <strong>Example Values:</strong> <code>5678</code></li>
+<li><strong>lat</strong>           <code>optional</code>  The latitude of the hardware. <strong>Example Values:</strong> <code>47.42307</code></li>
+<li><strong>lon</strong>           <code>optional</code>  The longitude of the hardware. <strong>Example Values:</strong> <code>15.26703</code></li>
+</ul>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XPOST -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/addHardwareIdToTag -d '{ "auth_token": "urjuMyiMMFEXyitKMaFx", "id": "4ea93241563f", "hardware_id": "EFC-2", "hardware_type": "qr" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "tags":[  
+      {  
+         "id":175,
+         "tag_identifier":"c29483d3e4de",
+         "gender":"m",
+         "translation":{  
+            "text":"Whats up",
+            "lang":"de"
+         }
+      }
+   ]
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"Request values are missing",
+        "values":[  
+           "lang"
+        ],
+        "code":"InvalidRequest"
+     }
+  }
+</code></pre>
+
+<h3>GET /api/v1/tags/show</h3>
+
+<ul>
+<li>Shows a tag via the Nearspeak ID.</li>
+</ul>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><strong>id</strong>    <code>required</code>  The Nearspeak ID. <strong>Example Values:</strong> <code>58f46cfe90d5</code></li>
+<li><strong>lang</strong>  <code>optional</code>  The requested language. <strong>Example Values:</strong> <code>en</code></li>
+</ul>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XGET -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/show -d '{ "id": "urjuMyiMMFEXyitKMaFx" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "tags":[  
+      {  
+         "id":123,
+         "tag_identifier":"c2b5cd49a8ad",
+         "description":"Summer Party",
+         "name":{  
+            "text":"Store Screenshot 2 - Holidays",
+            "lang":"de"
+         },
+         "gender":"m",
+         "image_url":"http://nearspeak.at/images/2-holidays.jpg",
+         "text_url":"http://www.nearspeak.at/",
+         "translation":{  
+            "text":"Win your next holiday trip!",
+            "lang":"en"
+         }
+      }
+   ]
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"Tag not found",
+        "code":"InvalidRequest"
+     }
+  }
+</code></pre>
+
+<h3>GET /api/v1/tags/showByHardwareId</h3>
+
+<ul>
+<li>Shows a tag via the hardware identifier.</li>
+</ul>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><strong>id</strong>    <code>required</code>  The hardware identifier. <strong>Example Values:</strong> <code>0433288AA62780</code></li>
+<li><strong>type</strong>  <code>required</code>  The hardware type. <strong>Example Values:</strong> <code>nfc</code></li>
+<li><strong>major</strong> <code>optional</code>  The bluetooth beacon major id (Required if type id ble_beacon). <strong>Example Values:</strong> <code>1234</code></li>
+<li><strong>minor</strong> <code>optional</code>  The bluetooth beacon minor id (Required if type id ble_beacon). <strong>Example Values:</strong> <code>5678</code></li>
+<li><strong>lang</strong>  <code>optional</code>  The requested language. <strong>Example Values:</strong> <code>en</code></li>
+<li><strong>lat</strong>   <code>optional</code>  The latitude of the hardware. <strong>Example Values:</strong> <code>47.42307</code></li>
+<li><strong>lon</strong>   <code>optional</code>  The longitude of the hardware. <strong>Example Values:</strong> <code>15.26703</code></li>
+</ul>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XGET -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/showByHardwareId -d '{ "id": "048F7A81A72780", "type": "nfc" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "tags":[  
+      {  
+         "id":55,
+         "tag_identifier":"2fdcb41bdad4",
+         "name":{  
+            "text":"Multi NFC Tag",
+            "lang":"de"
+         },
+         "image_url":"http://heidicohen.com/wp-content/uploads/Big-Fat-Cat-.jpg",
+         "text_url":"www.appaya.at",
+         "translation":{  
+            "text":"das ist ein mehrfach online Pack",
+            "lang":"de"
+         },
+         "hardware":[  
+            {  
+               "type":"nfc",
+               "identifier":"048F7A81A72780"
+            },
+            {  
+               "type":"nfc",
+               "identifier":"678D3200"
+            },
+            {  
+               "type":"nfc",
+               "identifier":"04DB6D89A72780"
+            }
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"Tag not found",
+        "code":"InvalidRequest"
+     }
+  }
+</code></pre>
+
+<h3>GET /api/v1/tags/showMyTags</h3>
+
+<ul>
+<li>Shows all your Nearspeak tags.</li>
+</ul>
+
+<h4>Example Request</h4>
+
+<pre><code>{
+  *"auth_token": "afggwwUE7324422"
+}
+</code></pre>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XGET -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/showMyTags -d '{ "auth_token": "048F7A81A72780" }'
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "tags":[  
+      {  
+         "id":55,
+         "tag_identifier":"2fdcb41bdad4",
+         "name":{  
+            "text":"Multi NFC Tag",
+            "lang":"de"
+         },
+         "image_url":"http://heidicohen.com/wp-content/uploads/Big-Fat-Cat-.jpg",
+         "text_url":"www.appaya.at",
+         "translation":{  
+            "text":"das ist ein mehrfach online Pack",
+            "lang":"de"
+         },
+         "hardware":[  
+            {  
+               "type":"nfc",
+               "identifier":"048F7A81A72780"
+            },
+            {  
+               "type":"nfc",
+               "identifier":"678D3200"
+            },
+            {  
+               "type":"nfc",
+               "identifier":"04DB6D89A72780"
+            }
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h4>Example Error Response</h4>
+
+<pre><code>  {  
+     "error":{  
+        "message":"User not found.",
+        "code":"UserNotFound"
+     }
+  }
+</code></pre>
+
+<h3>GET /api/v1/tags/supportedLanguageCodes</h3>
+
+<ul>
+<li>Shows all supported translation languages by Bing Translate.</li>
+</ul>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XGET -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/supportedLanguageCodes
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "language_codes":[  
+      "ar",
+      "bg",
+      "ca",
+      "zh-CHS",
+      "zh-CHT",
+      "cs",
+      "da",
+      "nl",
+      "en",
+      "et",
+      "fi",
+      "fr",
+      "de",
+      "el",
+      "ht",
+      "he",
+      "hi",
+      "mww",
+      "hu",
+      "id",
+      "it",
+      "ja",
+      "tlh",
+      "tlh-Qaak",
+      "ko",
+      "lv",
+      "lt",
+      "ms",
+      "mt",
+      "no",
+      "fa",
+      "pl",
+      "pt",
+      "ro",
+      "ru",
+      "sk",
+      "sl",
+      "es",
+      "sv",
+      "th",
+      "tr",
+      "uk",
+      "ur",
+      "vi",
+      "cy"
+   ]
+}
+</code></pre>
+
+<h3>GET /api/v1/tags/supportedBeaconUUIDs</h3>
+
+<ul>
+<li>Shows all supported and active iBeacons UUIDs.</li>
+</ul>
+
+<h4>Example curl command</h4>
+
+<pre><code>curl -XGET -H 'Content-Type: application/json' http://nearspeak.cloudapp.net/api/v1/tags/supportedBeaconUUIDs
+</code></pre>
+
+<h4>Example Success Response</h4>
+
+<pre><code>{  
+   "uuids":[  
+      "699EBC80E1F311E39A0F0CF3EE3BC012",
+      "CEFCC021E45F4520A3AB9D1EA22873AD",
+      "F7826DA6-4FA2-4E98-8024-BC5B71E0893E"
+   ]
+}
+</code></pre>
+</body>
+</html>

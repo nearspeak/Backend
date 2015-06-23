@@ -1,0 +1,42 @@
+<%- model_class = Tag -%>
+
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <%= link_to(tags_path) do %>
+        <div class="title">
+          <i class="fa fa-comment"></i>
+          <%= model_class.model_name.human(:count => 2).titleize %>
+          <% unless @tags.nil? %>
+            (<%= @tags.count %>)
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% unless @tags.nil? %>
+          <% @tags.each do |tag| %>
+            <% if tag.hardwares.length < 1 %>
+                  <tr>
+                    <td><%= link_to tag.display_name, tag_path(tag), :class => 'text-contrast' %></td>
+                    <td><%= link_to l(tag.created_at, format: :short), tag_path(tag), :class => 'text-contrast' %></td>
+                  </tr>
+            <% else %>
+                  <tr>
+                    <td><%= link_to tag.display_name, tag_path(tag) %></td>
+                    <td><%= link_to l(tag.created_at, format: :short), tag_path(tag) %></td>
+                  </tr>
+            <% end %>
+          <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

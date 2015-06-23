@@ -1,0 +1,23 @@
+<%= simple_form_for(@hardware, :html => { :class => 'form-horizontal' }) do |f| %>
+  <div class="panel panel-default panel-body">
+
+    <%= f.input :tag_id, :as => :hidden, :input_html => { :value => @tag_id } %>
+    <%= f.input :hardware_type, collection: @hardware_types, :label_method => :first, :value_method => :last, prompt: t('hardware_select_type'), :input_html => { :class => 'form-control' } %>
+    <%= f.input :identifier, :input_html => { :class => 'form-control' } %>
+    <%= f.input :major, :input_html => { :class => 'form-control' } %>
+    <%= f.input :minor, :input_html => { :class => 'form-control' } %>
+
+    <hr class="hr-normal">
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+
+      <% if @tag_id.nil? %>
+          <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')),
+                      tags_path(), :class => 'btn btn-default' %>
+      <% else %>
+          <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')),
+                      tag_path(@tag_id), :class => 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

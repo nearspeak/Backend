@@ -1,0 +1,47 @@
+<%- model_class = Customer -%>
+
+<%= render partial: 'layouts/navbar', :locals => { :title => model_class.model_name.human(:count => 1).titleize, :icon => 'fa fa-user', :levelOne => model_class.model_name.human(:count => 1).titleize, :levelTwo => nil, :levelThree => nil } %>
+
+<% unless @customer.nil? %>
+    <% unless @customer.email.empty? %>
+        <div class="panel panel-default panel-body">
+          <h4 class="title text-primary"><%= @customer.email %></h4>
+          <small><%= model_class.human_attribute_name(:email) %></small>
+        </div>
+    <% end %>
+
+    <% unless @customer.company.empty? %>
+        <div class="panel panel-default panel-body">
+          <h4 class="title text-primary"><%= @customer.company %></h4>
+          <small><%= model_class.human_attribute_name(:company) %></small>
+        </div>
+    <% end %>
+
+    <% unless @customer.first_name.empty? %>
+        <div class="panel panel-default panel-body">
+          <h4 class="title text-primary"><%= @customer.first_name %></h4>
+          <small><%= model_class.human_attribute_name(:first_name) %></small>
+        </div>
+    <% end %>
+
+    <% unless @customer.last_name.empty? %>
+        <div class="panel panel-default panel-body">
+          <h4 class="title text-primary"><%= @customer.last_name %></h4>
+          <small><%= model_class.human_attribute_name(:last_name) %></small>
+        </div>
+    <% end %>
+
+    <% unless @customer.cms_lang.nil? %>
+        <% unless @customer.cms_lang.empty? %>
+            <div class="panel panel-default panel-body">
+              <h4 class="title text-primary"><%= CustomersHelper.name_from_language_code(@customer.cms_lang) %></h4>
+              <small><%= model_class.human_attribute_name(:cms_lang) %></small>
+            </div>
+        <% end %>
+    <% end %>
+
+    <div class="form-actions">
+      <%= link_to t('helpers.links.edit'),
+                  edit_customer_path(@customer), :class => 'btn btn-primary' %>
+    </div>
+<% end %>

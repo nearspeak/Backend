@@ -1,0 +1,13 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-bar-chart"></i>
+      <%= t('overview_top10_scanned_tags') %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= column_chart (Tag.my_top10_chart_data(current_customer)), colors: ["#f5f5f5"], stacked: true %>
+  </div>
+</div>

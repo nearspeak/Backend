@@ -1,0 +1,20 @@
+<%= simple_form_for @name_translation, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="panel panel-default panel-body">
+
+    <%= f.input :tag_id, :as => :hidden, :input_html => { :value => @tag_id } %>
+    <%= f.input :lang_code, collection: @translation_langs, :label_method => :first, :value_method => :last, prompt: t('name_translation_select_language'), :input_html => { :class => 'form-control' } %>
+
+    <% if @editTagForm %>
+        <%= f.input :text, :input_html => { :class => 'form-control' } %>
+    <% end %>
+    <hr class="hr-normal">
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+
+      <% unless @tag_id.nil? %>
+          <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')),
+                      tag_path(@tag_id), :class => 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

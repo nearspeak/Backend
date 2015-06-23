@@ -1,0 +1,23 @@
+<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="panel panel-default panel-body">
+    <% if @customer.errors.any? %>
+        <div class="alert alert-warning alert-dismissable">
+          <ul>
+            <% @customer.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= f.input :first_name, :input_html => { :class => 'form-control' } %>
+    <%= f.input :last_name, :input_html => { :class => 'form-control' } %>
+    <%= f.input :company, :input_html => { :class => 'form-control' } %>
+
+    <%= f.input :cms_lang, collection: CustomersHelper.supported_cms_languages_with_names, prompt: t('customer_select_language'), :input_html => { :class => 'form-control' } %>
+
+    <hr class="hr-normal">
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary', :mode => 'in_mode' %>
+    </div>
+  </div>
+<% end %>

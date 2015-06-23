@@ -1,0 +1,5 @@
+<%- model_class = Hardware -%>
+
+<%= render partial: 'layouts/navbar', :locals => { :title => model_class.model_name.human(:count => 1).titleize, :icon => 'fa fa-hdd-o', :levelOne => model_class.model_name.human(:count => 1).titleize, :levelTwo => nil, :levelThree => nil } %>
+
+<%= render :partial => 'form' %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @hardware_location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @hardware_location.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_hardware_location_path(@hardware_location) %> |
+<%= link_to 'Back', hardware_locations_path %>

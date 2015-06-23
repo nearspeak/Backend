@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="pull-left">
+      <h1 class="pull-left">
+        <% if icon.nil? %>
+        <i class="fa fa-tag"></i>
+        <% else %>
+        <i class="<%= icon %>"></i>
+        <% end %>
+        <span><a href="/"><%= title %></a></span>
+      </h1>
+    </div>
+    
+    <% unless levelOne.nil? %>
+    <div class="pull-right">
+      <ol class="breadcrumb">
+        <li>
+          <a href="/">
+            <i class="fa fa-bar-chart"></i>
+          </a>
+        </li>
+        
+        <li class="separator">
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li><%= levelOne %></li>
+        
+
+        <% unless levelTwo.nil? %>
+        <li class="separator">
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li class="active"><%= levelTwo %></li>
+        <% end %>
+
+        <% unless levelThree.nil? %>
+        <li class="separator">
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li class="active"><%= levelThree %></li>
+        <% end %>
+
+      </ol>
+    </div>
+    <% end %>
+    
+  </div>
+</div>

@@ -1,0 +1,10 @@
+# roles of server system
+ROLES_ADMIN = 'admin'
+ROLES_CUSTOMER = 'customer'
+
+# bing account data
+BING_CLIENT_ID = 'YOUR_BING_ID'
+BING_CLIENT_SECRET = 'YOUR_BING_SECRET'
+
+# translation
+MAX_TAGS_PER_PURCHASE_ID = 350

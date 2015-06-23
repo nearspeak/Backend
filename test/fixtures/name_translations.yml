@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+name_translation_one:
+  lang_code: en
+  text: 'Fist Name Translation'
+  tag: tag_one

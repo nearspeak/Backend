@@ -1,0 +1,118 @@
+<%= simple_form_for @tag, :html => { :class => 'form-horizontal' } do |f| %>
+    
+<div class="panel panel-default">    
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-pencil"></i>
+      <%=t 'tag_details' %>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <%= f.input :place_id, :as => :hidden %>
+    <%= f.input :description, :input_html => { :class => 'form-control' } %>
+    <%= f.input :parent_id, label_method: :display_name, value_method: :id, collection: Tag.where(:customer_id => current_customer.id), prompt: t('tag_select_partent_tag'), :input_html => { :class => 'form-control' } %>
+  
+    <% if Place.where(:customer_id => current_customer.id).count > 0 %>
+    <%= f.association :place, collection: Place.where(:customer_id => current_customer.id), prompt: t('tag_select_place'), :input_html => { :class => 'form-control' } %>
+    <% end %>
+    <div class="checkbox">
+    <%= f.label :active do %>
+      <%= f.check_box :active %>
+      <%= t('tag_is_active') %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-normal">
+
+<div class="panel panel-default">    
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-sun-o"></i>
+      <%=t 'tag_active_time' %>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="checkbox">
+    <%= f.label :active_time do %>
+      <%= f.check_box :active_time %>
+      <%= t('tag_is_active_time_enabled') %>
+    <% end %>
+    </div>
+    <hr class="hr-normal">
+    <div class="timepicker input-group" id="timepicker">
+    <%= f.input :active_start_time, as: :string, label: false, placeholder: t('tag_active_time_start'), :input_html => { :class => 'form-control' , 'data-format' => "hh:mm" } %>
+
+    <span class="input-group-addon">
+    <span data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-time"></span>
+    </span>
+    </div>
+    <div class="timepicker input-group" id="timepicker">
+    <%= f.input :active_stop_time, as: :string, label: false, placeholder: t('tag_active_time_stop'), :input_html => { :class => 'form-control' , 'data-format' => "hh:mm" } %>
+
+    <span class="input-group-addon">
+    <span data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-time"></span>
+    </span>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-normal">
+
+<div class="panel panel-default">    
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-eye"></i>
+      <%=t 'tag_active_date' %>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="checkbox">
+    <%= f.label :active_date do %>
+      <%= f.check_box :active_date %>
+      <%= t('tag_is_active_date_enabled') %>
+    <% end %>
+    </div>
+    <hr class="hr-normal">
+    
+    <div class="input-group">
+      <input class="form-control daterange" placeholder="<%= t('tag_active_date_daterange') %>" value="<%= @tag.active_date_to_string %>" type="text">
+      <span class="input-group-addon" id="daterange">
+        <i class="icon-calendar"></i>
+      </span>
+    </div>
+    
+    <script>
+    $("#daterange").daterangepicker({
+      format: "MM.DD.YYYY"
+    }, function(start, end) {
+      var dateFormat = "DD.MM.YYYY"
+      $("#tag_active_start_date").val(start.format(dateFormat));
+      $("#tag_active_stop_date").val(end.format(dateFormat));
+      return $("#daterange").parent().find("input").first().val(start.format(dateFormat) + " - " + end.format(dateFormat));
+    });
+    </script>
+    
+    <%= f.input :active_start_date, :as => :hidden %>
+    <%= f.input :active_stop_date, :as => :hidden %>
+  </div>
+</div>
+      
+<div class="form-actions">
+  <%= f.button :submit, :class => 'btn btn-primary' %>
+
+  <% if @tag.id.nil? %>
+
+  <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')), tags_path(), :class => 'btn btn-default' %>
+
+  <% else %>
+
+  <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')), tag_path(), :class => 'btn btn-default' %>
+
+  <% end %>
+</div>
+<% end %>

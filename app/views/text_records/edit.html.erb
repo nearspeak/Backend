@@ -1,0 +1,5 @@
+<%- model_class = TextRecord -%>
+
+<%= render partial: 'layouts/navbar', :locals => { :title => model_class.model_name.human(:count => 1).titleize, :icon => 'fa fa-pencil', :levelOne => model_class.model_name.human(:count => 1).titleize, :levelTwo => nil, :levelThree => nil } %>
+
+<%= render :partial => 'form' %>

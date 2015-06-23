@@ -1,0 +1,35 @@
+<ul class="nav nav-sidebar">
+  <% if controller_name == 'overview' %>
+      <li class="active">
+  <% else %>
+      <li class="">
+  <% end %>
+
+  <a href="/">
+    <span>Dashboard</span>
+  </a>
+  </li>
+  
+  <% if controller_name == 'tags' %>
+      <li class="active">
+  <% else %>
+      <li class="">
+  <% end %>
+
+  <%= link_to(tags_path) do %>
+      <span><%=t  Tag.model_name.human(:count => 2).titleize %></span>
+  <% end %>
+  </li>
+  
+  <% if controller_name == 'places' %>
+      <li class="active">
+  <% else %>
+      <li class="">
+  <% end %>
+
+  <%= link_to(places_path) do %>
+      <span><%=t  Place.model_name.human(:count => 2).titleize %></span>
+  <% end %>
+
+  </li>
+</ul>

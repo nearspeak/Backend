@@ -1,0 +1,112 @@
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-hdd-o"></i>
+      <%= Hardware.model_name.human(:count => 2).titleize %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <% unless hardwares.nil? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= Hardware.human_attribute_name(:identifier) %></th>
+          <th><%= Hardware.human_attribute_name(:hardware_type) %></th>
+          <th><%= Hardware.human_attribute_name(:location) %></th>
+          <th><%= Hardware.human_attribute_name(:major) %></th>
+          <th><%= Hardware.human_attribute_name(:minor) %></th>
+          <th><%= t 'helpers.actions', :default => t('helpers.actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% hardwares.each do |hardware| %>
+        <tr>
+          <td><%= hardware.identifier %></td>
+          <td><%= hardware.hardware_type %></td>
+          <% if hardware.current_location.nil? %>
+          <td>&nbsp;</td>
+          <% else %>
+          <td><%= hardware.current_location.latitude %> | <%= hardware.current_location.longitude %></td>
+          <% end %>
+          <% if hardware.major.nil? %>
+          <td>&nbsp;</td>
+          <% else %>
+          <td><%= hardware.major %></td>
+          <% end %>
+          <% if hardware.minor.nil? %>
+          <td>&nbsp;</td>
+          <% else %>
+          <td><%= hardware.minor %></td>
+          <% end %>
+          <td>
+            <%= link_to(edit_hardware_path(hardware, :tag_id => tag.id), :class => 'btn btn-default') do %>
+            <i class="fa fa-pencil"></i>
+            <% end %>
+
+            <%= link_to(hardware_path(hardware, :tag_id => tag.id),
+            :method => :delete,
+            :data => { :confirm => t('helpers.links.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) },
+            :class => 'btn btn-danger') do %>
+              <i class="fa fa-trash-o"></i>
+
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+      <% end %>
+
+      <% unless tag.nil? %>
+      <div class="form-actions">
+        <%= link_to t('helpers.titles.new', model: Hardware.model_name.human.titleize, :default => t('helpers.titles.new')),
+        new_hardware_path(:mode => 'in_mode', :tag_id => tag.id),
+        :class => 'btn btn-default' %>
+      </div>
+      <% end %>
+
+    </div>
+    <% unless hardwares.nil? %>
+    <% unless @markers.nil? or @showMap == false %>
+      
+    <div class="panel panel-default panel-body">
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    
+      <style>
+      #map {
+        margin-top: 20px;
+        height: 300px;
+      }
+      </style>
+    
+      <div id="map"></div>
+    
+      <script type="text/javascript">
+      var map = L.map('map').setView([0, 0], 17);
+
+      // add an OpenStreetMap tile layer
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+        
+      var markers = []
+      
+      <% @markers.each do |location| %>
+      var marker = new L.marker([<%= location[:lat] %>, <%= location[:lng] %>]).addTo(map);
+
+      markers.push(marker)
+
+      <% end %>
+
+      var group = new L.featureGroup(markers);
+
+      map.fitBounds(group.getBounds());
+      </script>
+    </div>
+      
+    <% end %>
+    <% end %>
+  </div>

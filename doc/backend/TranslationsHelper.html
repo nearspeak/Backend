@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: TranslationsHelper
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TranslationsHelper.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TranslationsHelper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: TranslationsHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/helpers/translations_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The TranslationsHelper module.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cut_country-class_method" title="cut_country (class method)">+ (Object) <strong>cut_country</strong>(lang_code) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove the country from the language code, because bing translate
+doesn&#39;t support this.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_valid_language-class_method" title="is_valid_language (class method)">+ (Object) <strong>is_valid_language</strong>(lang_code) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Check if the given language code is valid.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#supported_language_codes-class_method" title="supported_language_codes (class method)">+ (Object) <strong>supported_language_codes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all currently supported language codes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#supported_language_codes_with_names-class_method" title="supported_language_codes_with_names (class method)">+ (Object) <strong>supported_language_codes_with_names</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all currently supported language code including their names.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="cut_country-class_method">
+  
+    + (<tt>Object</tt>) <strong>cut_country</strong>(lang_code) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove the country from the language code, because bing translate
+doesn&#39;t support this. example: en_US -&gt; en example: en-US -&gt; en</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>lang_code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The language code which should be cut.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/translations_helper.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cut_country'>cut_country</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_lang_code'>lang_code</span> <span class='op'>==</span> <span class='kw'>nil</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='id identifier rubyid_lang_code'>lang_code</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_valid_language-class_method">
+  
+    + (<tt>Object</tt>) <strong>is_valid_language</strong>(lang_code) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Check if the given language code is valid.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>lang_code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The langecode which should be checked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/translations_helper.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_valid_language'>is_valid_language</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_languages'>languages</span> <span class='op'>=</span> <span class='id identifier rubyid_supported_language_codes'>supported_language_codes</span>
+
+  <span class='id identifier rubyid_cut_lang_code'>cut_lang_code</span> <span class='op'>=</span> <span class='id identifier rubyid_cut_country'>cut_country</span><span class='lparen'>(</span><span class='id identifier rubyid_lang_code'>lang_code</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_languages'>languages</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cut_lang_code'>cut_lang_code</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="supported_language_codes-class_method">
+  
+    + (<tt>Object</tt>) <strong>supported_language_codes</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all currently supported language codes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/translations_helper.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_supported_language_codes'>supported_language_codes</span>
+  <span class='comment'>#require &#39;bing_translator&#39;
+</span>
+  <span class='comment'>#translator = BingTranslator.new(BING_CLIENT_ID_DEV, BING_CLIENT_SECRET_DEV)
+</span>  <span class='comment'>#languages = translator.supported_language_codes
+</span>  <span class='comment'>#Rails.logger.info(&#39;DBG: supported languages: &#39; + languages.to_s)
+</span>
+  <span class='comment'># http://msdn.microsoft.com/en-us/library/hh456380.aspx
+</span>
+  <span class='comment'># update this string from time to time, don&#39;t query every time.
+</span>  <span class='id identifier rubyid_languages'>languages</span> <span class='op'>=</span> <span class='qwords_beg'>%w(</span><span class='tstring_content'>ar</span><span class='words_sep'> </span><span class='tstring_content'>bg</span><span class='words_sep'> </span><span class='tstring_content'>ca</span><span class='words_sep'> </span><span class='tstring_content'>zh-CHS</span><span class='words_sep'> </span><span class='tstring_content'>zh-CHT</span><span class='words_sep'> </span><span class='tstring_content'>cs</span><span class='words_sep'> </span><span class='tstring_content'>da</span><span class='words_sep'> </span><span class='tstring_content'>nl</span><span class='words_sep'> </span><span class='tstring_content'>en</span><span class='words_sep'> </span><span class='tstring_content'>et</span><span class='words_sep'> </span><span class='tstring_content'>fi</span><span class='words_sep'> </span><span class='tstring_content'>fr</span><span class='words_sep'> </span><span class='tstring_content'>de</span><span class='words_sep'> </span><span class='tstring_content'>el</span><span class='words_sep'> </span><span class='tstring_content'>ht</span><span class='words_sep'> </span><span class='tstring_content'>he</span><span class='words_sep'> </span><span class='tstring_content'>hi</span><span class='words_sep'> </span><span class='tstring_content'>mww</span><span class='words_sep'> </span><span class='tstring_content'>hu</span><span class='words_sep'> </span><span class='tstring_content'>id</span><span class='words_sep'> </span><span class='tstring_content'>it</span><span class='words_sep'> </span><span class='tstring_content'>ja</span><span class='words_sep'> </span><span class='tstring_content'>tlh</span><span class='words_sep'> </span><span class='tstring_content'>tlh-Qaak</span><span class='words_sep'> </span><span class='tstring_content'>ko</span><span class='words_sep'> </span><span class='tstring_content'>lv</span><span class='words_sep'> </span><span class='tstring_content'>lt</span><span class='words_sep'> </span><span class='tstring_content'>ms</span><span class='words_sep'> </span><span class='tstring_content'>mt</span><span class='words_sep'> </span><span class='tstring_content'>no</span><span class='words_sep'> </span><span class='tstring_content'>fa</span><span class='words_sep'> </span><span class='tstring_content'>pl</span><span class='words_sep'> </span><span class='tstring_content'>pt</span><span class='words_sep'> </span><span class='tstring_content'>ro</span><span class='words_sep'> </span><span class='tstring_content'>ru</span><span class='words_sep'> </span><span class='tstring_content'>sk</span><span class='words_sep'> </span><span class='tstring_content'>sl</span><span class='words_sep'> </span><span class='tstring_content'>es</span><span class='words_sep'> </span><span class='tstring_content'>sv</span><span class='words_sep'> </span><span class='tstring_content'>th</span><span class='words_sep'> </span><span class='tstring_content'>tr</span><span class='words_sep'> </span><span class='tstring_content'>uk</span><span class='words_sep'> </span><span class='tstring_content'>ur</span><span class='words_sep'> </span><span class='tstring_content'>vi</span><span class='words_sep'> </span><span class='tstring_content'>cy</span><span class='words_sep'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="supported_language_codes_with_names-class_method">
+  
+    + (<tt>Object</tt>) <strong>supported_language_codes_with_names</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all currently supported language code including their names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/translations_helper.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_supported_language_codes_with_names'>supported_language_codes_with_names</span>
+  <span class='lbracket'>[</span><span class='qwords_beg'>%w(</span><span class='tstring_content'>Arabic</span><span class='words_sep'> </span><span class='tstring_content'>ar</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Bulgarian</span><span class='words_sep'> </span><span class='tstring_content'>bg</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Catalan</span><span class='words_sep'> </span><span class='tstring_content'>ca</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Chinese</span><span class='words_sep'> </span><span class='tstring_content'>Simplified</span><span class='words_sep'> </span><span class='tstring_content'>zh-CHS</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Chinese</span><span class='words_sep'> </span><span class='tstring_content'>Traditional</span><span class='words_sep'> </span><span class='tstring_content'>zh-CHT</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Czech</span><span class='words_sep'> </span><span class='tstring_content'>cs</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Danish</span><span class='words_sep'> </span><span class='tstring_content'>da</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Dutch</span><span class='words_sep'> </span><span class='tstring_content'>nl</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>English</span><span class='words_sep'> </span><span class='tstring_content'>en</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Estonian</span><span class='words_sep'> </span><span class='tstring_content'>et</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Finnish</span><span class='words_sep'> </span><span class='tstring_content'>fi</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>French</span><span class='words_sep'> </span><span class='tstring_content'>fr</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>German</span><span class='words_sep'> </span><span class='tstring_content'>de</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Greek</span><span class='words_sep'> </span><span class='tstring_content'>el</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Haitian</span><span class='words_sep'> </span><span class='tstring_content'>Creole</span><span class='words_sep'> </span><span class='tstring_content'>ht</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Hebrew</span><span class='words_sep'> </span><span class='tstring_content'>he</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Hindi</span><span class='words_sep'> </span><span class='tstring_content'>hi</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Hmong</span><span class='words_sep'> </span><span class='tstring_content'>Daw</span><span class='words_sep'> </span><span class='tstring_content'>mww</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Hungarian</span><span class='words_sep'> </span><span class='tstring_content'>hu</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Indonesian</span><span class='words_sep'> </span><span class='tstring_content'>id</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Italian</span><span class='words_sep'> </span><span class='tstring_content'>it</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Japanese</span><span class='words_sep'> </span><span class='tstring_content'>ja</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Klingon</span><span class='words_sep'> </span><span class='tstring_content'>tlh</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Klingon</span><span class='words_sep'> </span><span class='tstring_content'>(pIqaD)</span><span class='words_sep'> </span><span class='tstring_content'>tlh-Qaak</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Korean</span><span class='words_sep'> </span><span class='tstring_content'>ko</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Latvian</span><span class='words_sep'> </span><span class='tstring_content'>lv</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Lithuanian</span><span class='words_sep'> </span><span class='tstring_content'>lt</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Malay</span><span class='words_sep'> </span><span class='tstring_content'>ms</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Maltese</span><span class='words_sep'> </span><span class='tstring_content'>mt</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Norwegian</span><span class='words_sep'> </span><span class='tstring_content'>no</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Persian</span><span class='words_sep'> </span><span class='tstring_content'>fa</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Polish</span><span class='words_sep'> </span><span class='tstring_content'>pl</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Portuguese</span><span class='words_sep'> </span><span class='tstring_content'>pt</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Romanian</span><span class='words_sep'> </span><span class='tstring_content'>ro</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Russian</span><span class='words_sep'> </span><span class='tstring_content'>ru</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Slovak</span><span class='words_sep'> </span><span class='tstring_content'>sk</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Slovenian</span><span class='words_sep'> </span><span class='tstring_content'>sl</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Spanish</span><span class='words_sep'> </span><span class='tstring_content'>es</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Swedish</span><span class='words_sep'> </span><span class='tstring_content'>sv</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Thai</span><span class='words_sep'> </span><span class='tstring_content'>th</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Turkish</span><span class='words_sep'> </span><span class='tstring_content'>tr</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Ukrainian</span><span class='words_sep'> </span><span class='tstring_content'>uk</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Urdu</span><span class='words_sep'> </span><span class='tstring_content'>ur</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Vietnamese</span><span class='words_sep'> </span><span class='tstring_content'>vi</span><span class='words_sep'>)</span><span class='comma'>,</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>Welsh</span><span class='words_sep'> </span><span class='tstring_content'>cy</span><span class='words_sep'>)</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Jun 23 15:57:08 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

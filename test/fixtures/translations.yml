@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+translation_one:
+  original_text_id: original_text_one
+  text_record: text_record_one
+  text: 'What doest the fox say.'
+  lang_code: 'en'

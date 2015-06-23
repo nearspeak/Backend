@@ -1,0 +1,35 @@
+<%- model_class = Place -%>
+
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <%= link_to(places_path) do %>
+        <div class="title">
+          <i class="fa fa-map-marker"></i>
+          <%=  model_class.model_name.human(:count => 2).titleize %>
+          <% unless @places.nil? %>
+              (<%= @places.count %>)
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:description) %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% unless @places.nil? %>
+          <% @places.each do |place| %>
+              <tr>
+                <td><%= link_to place.name, place_path(place) %></td>
+                <td><%= place.description %></td>
+              </tr>
+          <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

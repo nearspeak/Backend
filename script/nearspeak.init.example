@@ -1,0 +1,52 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:		nearspeak
+# Required-Start:	$local_fs $remote_fs
+# Required-Stop:	$local_fs $remote_fs
+# X-Start-Before:
+# X-Stop-After:
+# Default-Start:	2 3 4 5
+# Default-Stop:		0 1 6
+# Description:		Runs the nearspeak services
+# Short-Description:	Runs the nearspeak services
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+SERVERPORT=3000
+ENVIRONMENT=production
+PIDFILE=/tmp/server.pid
+SERVERDIR=/opt/nearspeak/
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+	start)
+		log_daemon_msg "Starting nearspeak system" "nearspeak"
+		cd $SERVERDIR
+		puma -d -p $SERVERPORT -e $ENVIRONMENT --pidfile $PIDFILE
+		log_end_msg 0
+		;;
+
+	stop)
+		log_daemon_msg "Stopping nearspeak system" "nearspeak"
+		cd $SERVERDIR
+		pumactl -P $PIDFILE stop
+		log_end_msg 0
+		;;
+
+	force-reload|restart)
+		${0} stop
+		${0} start
+		;;
+
+	status)
+		cd $SERVERDIR
+		pumactl -P $PIDFILE status
+		;;
+
+	*)
+		log_success_msg "Usage: ${0} {start|stop|restart|force-reload|status}"
+		exit 1
+		;;
+esac

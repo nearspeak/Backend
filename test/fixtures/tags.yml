@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+tag_one:
+  description: 'This is the first test tag.'
+  tag_identifier: '2deffb0512d6'
+
+tag_two:
+  description: 'This is the second test tag.'
+  tag_identifier: '2deffb0512d7'

@@ -1,0 +1,146 @@
+<%- model_class = Tag -%>
+
+<%= render partial: 'layouts/navbar', :locals => { :title => model_class.model_name.human(:count => 1).titleize, :icon => 'fa fa-comment', :levelOne => model_class.model_name.human(:count => 1).titleize, :levelTwo => nil, :levelThree => nil } %>
+
+
+<% unless @tag.nil? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="title">
+          <i class="fa fa-pencil"></i>
+          <%=t 'tag_details' %>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <% unless @tag.nil? %>
+                <% unless @tag.description.nil? or @tag.description.empty? %>
+                    <div class="panel panel-default panel-body">
+                      <h5 class="title text-primary"><%= @tag.description %></h5>
+                      <small><%= model_class.human_attribute_name(:description) %></small>
+                    </div>
+                <% end %>
+
+                <% unless @tag.scan_count.nil? %>
+                    <div class="panel panel-default panel-body">
+                      <h5 class="title text-primary"><%= @tag.scan_count %></h5>
+                      <small><%= model_class.human_attribute_name(:scan_count) %></small>
+                    </div>
+                <% end %>
+
+                <% unless @tag.parent.nil? %>
+                    <div class="panel panel-default panel-body">
+                      <h5 class="title text-primary"><%= link_to @tag.parent.display_name, tag_path(@tag.parent_id) %></h5>
+                      <small><%= model_class.human_attribute_name(:parent) %></small>
+                    </div>
+                <% end %>
+
+                <% if @tag.has_children? %>
+                    <div class="panel panel-default panel-body">
+                      <h5 class="title text-primary"><%= @tag.children.map {|child| link_to child.display_name, tag_path(child.id) }.join(', ').html_safe %></h5>
+                      <small><%= model_class.human_attribute_name(:children) %> (<%= @tag.children.count %>)</small>
+                    </div>
+                <% end %>
+
+                <% unless @tag.place.nil? %>
+                    <div class="panel panel-default panel-body">
+                      <h5 class="title text-primary"><%= link_to @tag.place.name, place_path(@tag.place_id) %></h5>
+                      <small><%= model_class.human_attribute_name(:place) %></small>
+                    </div>
+                <% end %>
+                <% unless @tag.active.nil? %>
+                    <div class="panel panel-default panel-body">
+                      <% if @tag.active %>
+                          <h5 class="title text-primary"><span class="label label-success"><%=t 'tag_status_active' %></span></h5>
+                      <% else %>
+                          <h5 class="title text-primary"><span class="label label-important"><%=t 'tag_status_inactive' %></span></h5>
+                      <% end %>
+                      <small><%= model_class.human_attribute_name(:status) %></small>
+                    </div>
+                <% end %>
+                
+                <% if !@tag.active_time.nil? && @tag.active_time == true %>
+                <div class="panel panel-default panel-body">
+                  <% if @tag.current_time_active %>
+                    <h5 class="title text-primary"><span class="label label-success"><%= @tag.active_time_to_string %></span></h5>
+                  <% else %>
+                    <h5 class="title text-primary"><span class="label label-important"><%= @tag.active_time_to_string %></span></h5>
+                  <% end %>
+                  <small><%= model_class.human_attribute_name(t('tag_active_time')) %></small>
+                </div>
+                <% end %>
+                
+                <% if !@tag.active_date.nil? && @tag.active_date == true %>
+                <div class="panel panel-default panel-body">
+                  <% if @tag.current_date_active %>
+                    <h5 class="title text-primary"><span class="label label-success"><%= @tag.active_date_to_string %></span></h5>
+                  <% else %>
+                    <h5 class="title text-primary"><span class="label label-important"><%= @tag.active_date_to_string %></span></h5>
+                  <% end %>
+                  <small><%= model_class.human_attribute_name(t('tag_active_date')) %></small>
+                </div>
+                <% end %>
+                
+            <% end %>
+          </div>
+          <div class="col-sm-6">
+            <% unless @text_record.nil? %>
+                <% unless @text_record.gender.nil? or @text_record.gender.empty? %>
+                    <div class="panel panel-default panel-body">
+                      <% if @text_record.gender == "m" %>
+                          <h5 class="title text-primary"><%=t 'tag_gender_male' %></h5>
+                      <% else %>
+                          <h5 class="title text-primary"><%=t 'tag_gender_female' %></h5>
+                      <% end %>
+                      <small><%= model_class.human_attribute_name(:gender) %></small>
+                    </div>
+                    <br/>
+                <% end %>
+                <% unless @text_record.image_uri.nil? or @text_record.image_uri.empty? %>
+                    <div style="text-align:right;">
+                      <a href="<%= @text_record.image_uri %>">
+                        <img width="320px" alt="NA" src="<%= @text_record.image_uri %>">
+                      </a>
+                    </div>
+                    <br/>
+                <% end %>
+                <% unless @text_record.link_uri.nil? or @text_record.link_uri.empty? %>
+                    <div style="text-align:right;">
+                      <a href="<%= @text_record.link_uri %>">
+                        <%= @text_record.link_uri %>
+                      </a>
+                    </div>
+                    <br/>
+                <% end %>
+                <div style="text-align:right;">
+                  <%= link_to t('helpers.links.editTagExtra', :default => t('helpers.links.editTagExtra')),
+                              edit_text_record_path(@text_record, :tag_id => @tag.id), :class => 'btn btn-default' %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-actions">
+              <%= link_to t('helpers.links.back', :default => t('helpers.links.back')),
+                          tags_path, :class => 'btn btn-default' %>
+              <%= link_to t('helpers.links.edit', :default => t('helpers.links.edit')),
+                          edit_tag_path(@tag), :class => 'btn btn-default' %>
+              <%= link_to t('helpers.links.destroy', :default => t('helpers.links.destroy')),
+                          tag_path(@tag),
+                          :method => 'delete',
+                          :data => {:confirm => t('helpers.links.confirm', :default => t('helpers.links.confirm'))},
+                          :class => 'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<%= render partial: 'names_tableview', :locals => { :tag => @tag, :name_translations => @name_translations } %>
+
+<%= render partial: 'translations_tableview', :locals => { :tag => @tag, :translations => @translations } %>
+
+<%= render partial: 'hardware_tableview', :locals => { :tag => @tag, :hardwares => @hardwares, :showMap => @showMap, :hash => @hash } %>

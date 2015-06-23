@@ -1,0 +1,52 @@
+<div class="panel panel-default" style="margin-bottom:10px;">
+  <div class="panel-heading">
+    <div class="title">
+      <i class="fa fa-bullhorn"></i>
+      <%= NameTranslation.model_name.human(:count => 2).titleize %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <% unless name_translations.nil? %>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th><%= NameTranslation.human_attribute_name(:lang_code) %></th>
+            <th><%= NameTranslation.human_attribute_name(:text) %></th>
+            <th><%=t 'helpers.actions' %></th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <% name_translations.each do |name_translation| %>
+              <tr>
+                <td><%= name_translation.lang_code %></td>
+                <td><%= name_translation.text %></td>
+                <td>
+                  <%= link_to(edit_name_translation_path(name_translation, :tag_id => tag.id), :class => 'btn btn-default') do %>
+                      <i class="fa fa-pencil"></i>
+                  <% end %>
+                  <% if name_translation.original_name_id.nil? %>
+                      <%= link_to(name_translation_path(name_translation, :tag_id => tag.id),
+                                  :method => :delete,
+                                  :data => { :confirm => t('helpers.links.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) },
+                                  :class => 'btn btn-danger') do %>
+                          <i class="fa fa-trash-o"></i>
+                      <% end %>
+                  <% end %>
+                </td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
+    <% end %>
+
+    <% unless @tag.nil? %>
+        <div class="form-actions">
+          <%= link_to t('helpers.titles.new', model: NameTranslation.model_name.human.titleize, :default => t('helpers.titles.new')),
+                      new_name_translation_path(:mode => 'in_mode', :tag_id => tag.id),
+                      :class => 'btn btn-default' %>
+        </div>
+    <% end %>
+  </div>
+</div>

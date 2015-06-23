@@ -1,0 +1,97 @@
+#!/bin/bash
+###############################################################################
+#                                                                             #
+# simple nearspeak backup / restore                                           #
+#                                                                             #
+# @version: 1.0.0                                                             #
+# @author: Steiner Patrick <patrick.steiner@appaya.at>                        #
+# @date: 19.08.2014 14:10                                                     #
+#                                                                             #
+###############################################################################
+
+# Database settings
+HOSTNAME="localhost"
+USER="nearspeak"
+DATABASE="nearspeak"
+BACKUPPATH="/home/nearspeak/nearspeak/backup"
+
+# Backup sync settings
+REMOTEHOST="backup.example.com"
+REMOTEUSER="backup1"
+REMOTEPATH="/mnt/backup/nearspeak"
+
+#######################################
+# FUNCTIONS                           #
+#######################################
+
+function backup_database
+{
+  CDATE=`date +%Y%m%d-%H%M`
+  
+  pg_dump -Fc --no-acl --no-owner -h $HOSTNAME -U $USER $DATABASE > $BACKUPPATH/nearspeak_$CDATE.dump
+}
+
+function restore_database ()
+{
+  if [ -z "$1" ]; then
+    return -1
+  fi
+  
+  RFILE=$1
+  
+  pg_restore --verbose --clean --no-acl --no-owner -h $HOSTNAME -U $USER -d $DATABASE $BACKUPPATH/$RFILE
+}
+
+function sync_backups
+{
+  rsync -az $BACKUPPATH $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
+}
+
+function backup_and_sync
+{
+  backup_database
+  sync_backups
+}
+
+function check_dependencies
+{
+  # pg_dump
+  command -v pg_dump >/dev/null 2>&1 || { echo >&2 "ERROR: pg_dump not found."; exit -1; }
+  
+  # pg_restore
+  command -v pg_restore >/dev/null 2>&1 || { echo >&2 "ERROR: pg_restore not found."; exit -1; }
+
+  # rsync
+  command -v rsync >/dev/null 2>&1 || { echo >&2 "ERROR: rsync not found."; exit -1; }
+}
+
+function usage
+{
+	cat << EOF
+usage: $0 options
+
+OPTIONS:
+  backup Backup the database
+  restore Restore the database (should be empty before)
+  sync Sync the backups to an remote server
+EOF
+}
+
+#######################################
+# MAIN                                #
+#######################################
+
+check_dependencies
+
+if [ "$1" = "backup" ]; then
+  backup_database
+elif [ "$1" = "restore" ]; then
+  restore_database "$2"
+elif [ "$1" = "sync" ]; then
+  backup_and_sync
+else
+  usage
+  exit -1
+fi
+
+# vim:ts=2:sw=2:

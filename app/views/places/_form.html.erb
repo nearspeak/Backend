@@ -1,0 +1,60 @@
+<%= simple_form_for @place, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="panel panel-default panel-body">
+
+    <%= f.input :name, :input_html => { :class => 'form-control' } %>
+    <%= f.input :description, :input_html => { :class => 'form-control' } %>
+    <%= f.input :latitude, :input_html => { :class => 'form-control' } %>
+    <%= f.input :longitude, :input_html => { :class => 'form-control' } %> 
+        
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    
+    <style>
+      #map {
+        margin-top: 20px;
+        height: 300px;
+      }
+    </style>
+    
+    <div id="map"></div>
+    
+    <script type="text/javascript">
+    var map = L.map('map').setView([<%= @place.latitude %>, <%= @place.longitude %>], 17);
+
+    // add an OpenStreetMap tile layer
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var startLat = <%= @place.latitude %>;
+    var startLon = <%= @place.longitude %>;
+
+    document.getElementById("place_latitude").value = startLat;
+    document.getElementById("place_longitude").value = startLon;
+
+    var marker = L.marker([startLat, startLon], { draggable: 'true' }).addTo(map);
+    marker.on('dragend', function(event) {
+      var marker = event.target;
+      var position = marker.getLatLng();
+      marker.setLatLng(new L.LatLng(position.lat, position.lng), { draggable: 'true' });
+      map.panTo(new L.LatLng(position.lat, position.lng))
+  
+      document.getElementById("place_latitude").value = position.lat;
+      document.getElementById("place_longitude").value = position.lng;
+    });
+    </script>
+    
+    <hr class="hr-normal">
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+
+      <% if @place.id.nil? %>
+          <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')),
+                      places_path(), :class => 'btn btn-default' %>
+      <% else %>
+          <%= link_to t('helpers.links.cancel', :default => t('helpers.links.cancel')),
+                      place_path(), :class => 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+== README
+
+This is the Nearspeak Backend Documentation.
+
+Required Software:
+
+* Ruby version: <tt>2.2.2</tt>
+
+* Rails version: <tt>4.2.0</tt>
+
+Installation:
+
+* Config your database <tt>config/database.yml</tt>
+
+* Config your production environment <tt>config/environments/production.rb</tt>
+
+* Config your nearspeak server config <tt>config/initializers/nearspeak_server_config.rb</tt>
+
+* Config your secret token <tt>config/initializers/secret_token.rb</tt>
+
+Optional:
+* Config your social network keys <tt>config/social_keys.yml</tt>

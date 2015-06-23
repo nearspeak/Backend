@@ -1,0 +1,28 @@
+<%= render partial: 'layouts/navbar', :locals => { :title => 'Dashboard', :icon => 'fa fa-tachometer', :levelOne => nil, :levelTwo => nil, :levelThree => nil } %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="well well-sm">
+      
+      <%= render :partial => 'tags_top10' %>
+      
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="well well-sm">
+
+      <%= render :partial => 'tags' %>
+
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well well-sm">
+
+      <%= render :partial => 'places' %>
+
+    </div>
+  </div>
+</div>

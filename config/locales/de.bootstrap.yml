@@ -1,0 +1,17 @@
+de:
+  helpers:
+    actions: Aktionen
+    links:
+      back: Zurück
+      cancel: Abbrechen
+      confirm: Sind Sie sicher?
+      destroy: Löschen
+      new: Neu
+      edit: Ändern
+      show: Anzeigen
+      editTagExtra: Bild / URL / Geschlecht ändern
+    titles:
+      edit: '%{model} ändern'
+      save: '%{model} speichern'
+      new: '%{model} erstellen'
+      delete: '%{model} löschen'
