@@ -34,12 +34,11 @@ class TagsController < ApplicationController
         
         @markers = []
         
-        
         @tag.hardwares.with_location().each do | hardware |
           unless hardware.current_location.nil?
             @showMap = true
 
-            @markers << { :lat => hardware.current_location.latitude, :lng => hardware.current_location.longitude}
+            @markers << { :lat => hardware.current_location.latitude, :lng => hardware.current_location.longitude }
           end
         end
         
@@ -52,6 +51,12 @@ class TagsController < ApplicationController
     @tag = Tag.new
     if params[:mode] == 'in_mode'
       @tag.place_id = params['place_id']
+    end
+
+    @tag_limit_reached = true
+    
+    if Tag.my(current_customer).count <= MAX_TAG_PER_CUSTOMER
+      @tag_limit_reached = false
     end
   end
 

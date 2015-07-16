@@ -2,4 +2,8 @@
 
 <%= render partial: 'layouts/navbar', :locals => { :title => model_class.model_name.human(:count => 1).titleize, :icon => 'fa fa-comment', :levelOne => model_class.model_name.human(:count => 1).titleize, :levelTwo => nil, :levelThree => nil } %>
 
+<% if @tag_limit_reached %>
+<%= render :partial => 'tag_limit' %>
+<% else %>
 <%= render :partial => 'form' %>
+<% end %>
