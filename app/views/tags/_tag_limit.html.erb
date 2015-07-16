@@ -1,15 +1,13 @@
-<div class="box bordered-box purple-border">
-  <div class="box-header nearspeak-light-background">
+<div class="panel panel-default">
+  <div class="panel-heading">
     <div class="title">
-      <i class="icon-edit"></i>
+      <i class="fa fa-pencil"></i>
       <%=t 'tag' %>
     </div>
-    <div class="actions">
-      <a class="btn box-collapse btn-xs btn-link" href="#"><i></i></a>
-    </div>
   </div>
-
-  <div class="box-content box-double-padding">
-    <p>You have reached the <b>maximum tags limit</b>, please contact us. <%= mail_to 'support@nearspeak.at'%></p>
+  <div class="panel-body">
+    <div class="panel panel-default panel-body">
+      <p>You have reached the <b>maximum tags limit</b>, please contact us. <%= mail_to 'support@nearspeak.at'%></p>
+    </div>
   </div>
 </div>
