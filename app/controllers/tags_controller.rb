@@ -125,6 +125,6 @@ class TagsController < ApplicationController
   ##
   # Never trust parameters from the scary internet, only allow the white list through.
   def tag_params
-    params.require(:tag).permit(:places_id, :name, :description, :tag_identifier, :original_name, :parent_id, :active, :active_start_time, :active_stop_time, :active_time, :active_date, :active_start_date, :active_stop_date)
+    params.require(:tag).permit(:place_id, :name, :description, :tag_identifier, :original_name, :parent_id, :active, :active_start_time, :active_stop_time, :active_time, :active_date, :active_start_date, :active_stop_date)
   end
 end
